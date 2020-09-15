@@ -2,7 +2,7 @@ This repository contains the source code for detecting dynamic bias as it is des
 
 ## Train
 Trains CNN + LSTM hybrid model with BERT embeddings.
-> python train_words_dl_model.py -a 1 -w 1 -p "/homedtic/hkavas/SemEval" 
+> python Train/train_words_dl_model.py -a 1 -w 1 -p "/homedtic/hkavas/SemEval" 
 
 ## Get Tweets
 Obtains tweets for given username and timespan. This command runs periodically in our NiFi implementation.
