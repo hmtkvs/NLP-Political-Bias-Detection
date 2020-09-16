@@ -30,7 +30,11 @@ Sections below demonstrates the requirements and steps to run the codes for each
 2. Install dependencies
 > pip install -r requirements.txt
 3. Connect to MySQL
-  - Enter your user name, password and database names into [MySQLsettings.json](https://github.com/hmtkvs/MastersThesis/blob/master/MySQLsettings.json)
+  - Enter your user name, password and database name into [MySQLsettings.json](https://github.com/hmtkvs/MastersThesis/blob/master/MySQLsettings.json)
+  - Follow the steps in (https://dev.mysql.com/doc/connector-python/en/connector-python-installation.html) to download MySQL connector 
+  ```
+  pip install mysql-connector-python
+  ```
   
 ### Training
 - `cd Train`
