@@ -28,7 +28,7 @@ In this project, we aim to detect the possible effects of media bias by newspape
 2. Install dependencies
 > pip install -r requirements.txt
 3. For training:
-    - cd Train
+    - 'cd Train'
     - Download BERT embeddings from:
       > (https://github.com/google-research/bert)
     - Run the code
