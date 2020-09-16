@@ -37,14 +37,21 @@ In this project, we aim to detect the possible effects of media bias by newspape
 - `cd ..`
 - `cd ..`
 - Run the code
-  > python train_words_dl_model.py -a 1 -w 1 -p "/homedtic/hkavas/SemEval"
+  > python train_words_dl_model.py -a 1 -w 1 -p *yourpath/MastersThesis/Train*
   - Use `-a` argument to train a different model:
     i. `-a 1` hybrid CNN-LSTM model or
     ii. `-a 2` LSTM model.
   - Use `-w` argument for embeddings
 
 * To evaluate the model, use -e option. This will run the script on evaluation mode, which loads the trained model from disk and runs it against the validation data to get  the model's evaluation metrics. The metrics will be printed in a log file.
-    
+
+## Get Tweets
+This function will retrieve tweets and insert them into Tweets table in MySQL.
+- `cd MastersThesis`
+- Select arguments for 
+  i. `--username` without using @
+  ii. `--since` and `-until`. Example date: `2020-09-01`
+> python Exporter.py --username *username* --since *starting_date* --until *finishing_date* 
 
 
 
