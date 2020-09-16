@@ -194,10 +194,7 @@ def evaluate_model(model, X_val, y_val):
 
 def transferLearning(model):
     print("Transfer learning is on!")
-    for l in model.layers[:-1]:
-      l.trainable = False
-    #model.add(Dense(1, activation='sigmoid'))
-    return model
+    model.add(Dense(1, activation='sigmoid'))
     
     return model
     
