@@ -197,6 +197,7 @@ def transferLearning(model):
     for l in model.layers[:-1]:
       l.trainable = False
     #model.add(Dense(1, activation='sigmoid'))
+    return model
     
     return model
     
@@ -366,12 +367,15 @@ def main():
         evaluate_model(model, X_val, y_val)
     else:
         # Implement Early Stopping
-        early_stopping_callback = callbacks.EarlyStopping(monitor='loss',
+        
+        
+        
+        early_stopping_callback = callbacks.EarlyStopping(monitor='val_loss',
                                 min_delta=0,
                                 patience=5,
                                 verbose=1)
                                 #   restore_best_weights=True)
-        save_best_model = callbacks.ModelCheckpoint(model_weights_location, monitor='loss', verbose=1, save_best_only=True, mode='auto')
+        save_best_model = callbacks.ModelCheckpoint(model_weights_location, monitor='val_loss', verbose=1, save_best_only=True, mode='auto')
         
         
         
@@ -382,9 +386,10 @@ def main():
 
         history = model.fit(X_train, y_train,
                     batch_size=batch_size,
-                    epochs=2,
+                    epochs=20,
                     verbose=2,
-                    callbacks=[early_stopping_callback, save_best_model]) #+validation_data=(X_val, y_val),
+                    validation_data=(X_val, y_val),
+                    callbacks=[early_stopping_callback, save_best_model])
                     
         #reload best weights
         model.load_weights(model_weights_location)
@@ -396,7 +401,10 @@ def main():
                     batch_size=batch_size,
                     epochs=10,
                     verbose=2,
+                    validation_data=(X_val, y_val),
                     callbacks=[early_stopping_callback])
+                    
+                    
         
         
 
