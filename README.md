@@ -23,12 +23,16 @@ Checks database for comments or tweets whose bias has not been assigned. If ther
 This repository contains the source code for detecting dynamic bias as it is described in our paper.
 In this project, we aim to detect the possible effects of media bias by newspapers on public opinion. Our purpose is to create a system that dynamically detects bias in media and the comments.
 
-## Installation
+## Running the repository
+Sections below demonstrates the requirements and steps to run the codes for each task.
+### Installation
 1. Clone this repository
 2. Install dependencies
 > pip install -r requirements.txt
-
-## Training
+3. Connect to MySQL
+  - Enter your user name, password and database names into [MySQLsettings.json](https://github.com/hmtkvs/MastersThesis/blob/master/MySQLsettings.json)
+  
+### Training
 - `cd Train`
 - Download BERT embeddings from:
   > (https://github.com/google-research/bert)
@@ -45,7 +49,7 @@ In this project, we aim to detect the possible effects of media bias by newspape
 
 * To evaluate the model, use -e option. This will run the script on evaluation mode, which loads the trained model from disk and runs it against the validation data to get  the model's evaluation metrics. The metrics will be printed in a log file.
 
-## Get Tweets
+### Get Tweets
 This function will retrieve tweets and insert them into Tweets table in MySQL.
 - `cd MastersThesis`
 - Select arguments for 
