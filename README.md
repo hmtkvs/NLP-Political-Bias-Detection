@@ -27,19 +27,20 @@ In this project, we aim to detect the possible effects of media bias by newspape
 1. Clone this repository
 2. Install dependencies
 > pip install -r requirements.txt
-3. For training:
-    - `cd Train`
-    - Download BERT embeddings from:
-      > (https://github.com/google-research/bert)
-    - Run the code
-      > python train_words_dl_model.py -a 1 -w 1 -p "/homedtic/hkavas/SemEval"
-      - Use `-a` argument to train a different model:
-        i. `-a 1` hybrid CNN-LSTM model or
-        ii. `-a 2` LSTM model.
-      - Use `-w` argument for embeddings
-      
-      
-    * To evaluate the model, use -e option. This will run the script on evaluation mode, which loads the trained model from disk and runs it against the validation data to get  the model's evaluation metrics. The metrics will be printed in a log file.
+
+## Training
+- `cd Train`
+- Download BERT embeddings from:
+  > (https://github.com/google-research/bert)
+- Run the code
+  > python train_words_dl_model.py -a 1 -w 1 -p "/homedtic/hkavas/SemEval"
+  - Use `-a` argument to train a different model:
+    i. `-a 1` hybrid CNN-LSTM model or
+    ii. `-a 2` LSTM model.
+  - Use `-w` argument for embeddings
+
+
+* To evaluate the model, use -e option. This will run the script on evaluation mode, which loads the trained model from disk and runs it against the validation data to get  the model's evaluation metrics. The metrics will be printed in a log file.
     
 
 
