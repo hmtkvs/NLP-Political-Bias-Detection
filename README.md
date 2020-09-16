@@ -39,7 +39,7 @@ In this project, we aim to detect the possible effects of media bias by newspape
       - Use `-w` argument for embeddings
       
       
-    *To evaluate the model, use -e option. This will run the script on evaluation mode, which loads the trained model from disk and runs it against the validation data to get  the model's evaluation metrics. The metrics will be printed in a log file.
+    * To evaluate the model, use -e option. This will run the script on evaluation mode, which loads the trained model from disk and runs it against the validation data to get  the model's evaluation metrics. The metrics will be printed in a log file.
     
 
 
