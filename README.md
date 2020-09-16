@@ -28,11 +28,11 @@ In this project, we aim to detect the possible effects of media bias by newspape
 2. Install dependencies
 > pip install -r requirements.txt
 3. For training:
-  - cd Train
-  - Download BERT embeddings from:
-    > (https://github.com/google-research/bert)
-  - Run the code
-    > python train_words_dl_model.py -a 1 -w 1 -p "/homedtic/hkavas/SemEval"
+    - cd Train
+    - Download BERT embeddings from:
+      > (https://github.com/google-research/bert)
+    - Run the code
+      > python train_words_dl_model.py -a 1 -w 1 -p "/homedtic/hkavas/SemEval"
     
 
 
