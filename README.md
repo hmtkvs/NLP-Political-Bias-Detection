@@ -41,6 +41,9 @@ Sections below demonstrates the requirements and steps to run the codes for each
        
     > mysql> CREATE TABLE comments (id_user VARCHAR(45) NOT NULL, name_user VARCHAR(45),
        text_comment VARCHAR(350), time_comment VARCHAR(100), id_comment VARCHAR(100), id_tweet VARCHAR(100), predicted_bias VARCHAR(10), PRIMARY KEY (id_user))
+    * database should look like this when you have followed the steps above.
+    (https://user-images.githubusercontent.com/56079783/93386616-410ed600-f868-11ea-9d2e-c0e36d2df4db.png)
+       
     
   
 ### Training
