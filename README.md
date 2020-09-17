@@ -23,7 +23,20 @@ Sections below demonstrates the requirements and steps to run the codes for each
        text_comment VARCHAR(350), time_comment VARCHAR(100), id_comment VARCHAR(100), id_tweet VARCHAR(100), predicted_bias VARCHAR(10), PRIMARY KEY (id_user))
     * database should look like this when you have followed the steps above.
     ![image](https://user-images.githubusercontent.com/56079783/93386616-410ed600-f868-11ea-9d2e-c0e36d2df4db.png)
-         
+4. Initialize directories
+  - `cd MastersThesis` 
+  - `mkdir results`
+  - `cd Train/data` 
+  - `mkdir Articles`
+  - `mkdir Databases`
+  - `mkdir Dummy`
+  - `mkdir GrounTruth`
+  - `mkdir IntegratedFiles`
+  - `mkdir logs`
+  - `mkdir models`
+  - `mkdir Pickles`
+  - `mkdir Tokenizers`
+
 ### Training
 - `cd Train`
 - Download BERT embeddings from:
