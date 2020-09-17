@@ -3,21 +3,6 @@
 Trains CNN + LSTM hybrid model with BERT embeddings.
 > python Train/train_words_dl_model.py -a 1 -w 1 -p "/homedtic/hkavas/SemEval" 
 
-## Get Tweets
-Obtains tweets for given username and timespan. This command runs periodically in our NiFi implementation.
-> python Exporter.py --username "cnn" --since 2020-09-01 --until 2020-09-15
-
-## Scrape Full Article
-Checks news tweets whose author name has not been entered, uses link from database to scrape full article and the author.
-> python fullArticle.py
-
-## Get Comments
-Checks database for new tweets and then finds replies to them.
-> python getComments.py 
-
-## Predict Bias
-Checks database for comments or tweets whose bias has not been assigned. If there is any, it makes predictions and inserts into database.
-> python dynamic_bias.py
 
 # THE BIAS EFFECT OF NEWS MEDIA SOURCES ON SOCIAL MEDIA USERS
 This repository contains the source code for detecting dynamic bias as it is described in our paper.
@@ -52,12 +37,14 @@ Sections below demonstrates the requirements and steps to run the codes for each
 - Add your data here(should be in xml format or could be replaced with other file formats by changing in [train_words_dl_model.py](https://github.com/hmtkvs/MastersThesis/blob/master/Train/train_words_dl_model.py)
 - `cd ..`
 - `cd ..`
+- Use `-a` argument to train a different model:
+  * `-a 1` hybrid CNN-LSTM model or
+  * `-a 2` LSTM model.
+- Use `-w` argument for embeddings
+  * `-w 0` word2vec Embeddings
+  * `-w 1` BERT Embeddings
 - Run the code
   > python train_words_dl_model.py -a 1 -w 1 -p *yourpath/MastersThesis/Train*
-  - Use `-a` argument to train a different model:
-    * `-a 1` hybrid CNN-LSTM model or
-    * `-a 2` LSTM model.
-  - Use `-w` argument for embeddings
 
 * To evaluate the model, use -e option. This will run the script on evaluation mode, which loads the trained model from disk and runs it against the validation data to get  the model's evaluation metrics. The metrics will be printed in a log file.
 
@@ -85,7 +72,8 @@ Checks database for comments or tweets whose bias have not been assigned. If the
   * `-o` the directory that you want to put output
   * `-s` preferred sequence length
   * `-m` name of the model that will make the predictions
-    > python dynamic_bias.py
+  -Run the code
+    > python dynamic_bias.py -p *yourpath/MastersThesis/* -o yourpath/MastersThesis/results* -m "words_conv_lstm_model_w1_v1"
 
 
 
