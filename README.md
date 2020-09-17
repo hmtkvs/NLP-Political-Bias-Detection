@@ -1,9 +1,4 @@
 
-## Train
-Trains CNN + LSTM hybrid model with BERT embeddings.
-> python Train/train_words_dl_model.py -a 1 -w 1 -p "/homedtic/hkavas/SemEval" 
-
-
 # THE BIAS EFFECT OF NEWS MEDIA SOURCES ON SOCIAL MEDIA USERS
 This repository contains the source code for detecting dynamic bias as it is described in our paper.
 In this project, we aim to detect the possible effects of media bias by newspapers on public opinion. Our purpose is to create a system that dynamically detects bias in media and the comments.
@@ -74,11 +69,4 @@ Checks database for comments or tweets whose bias have not been assigned. If the
   * `-m` name of the model that will make the predictions
   -Run the code
     > python dynamic_bias.py -p *yourpath/MastersThesis/* -o yourpath/MastersThesis/results* -m "words_conv_lstm_model_w1_v1"
-
-
-
-
-
-
-
 
