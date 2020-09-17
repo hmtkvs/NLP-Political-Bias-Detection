@@ -123,15 +123,44 @@ class PredictBias:
         
         print("DONE!")
         
+        
+def main():
+    import argparse
+    
 
-sem_eval_path = 'C:/Users/hmtkv/Desktop/THESSIS'
-runOutputFileName = "PREDD.csv"
-seq_len = 800
-model_file_name = 'words_conv_lstm_model_w1_v111112.h5'
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--code_path",'-p', default="/MastersThesis",
+                        help="Use this argument to change the directory path")
+    parser.add_argument("--runOutputFileName", '-o', default="/MastersThesis/results",
+                        help="Use this argument to change the output directory path")
+    parser.add_argument("--seq_len", '-s', default=800, 
+                        help="Use this argument to change sequence length")
+    parser.add_argument("--model_file_name", '-m', default="words_conv_lstm_model_w1_v111112.h5", 
+                        help="Use this argument to use the model to make predictions")
+                
+    args = parser.parse_args()           
+  
+    #code_path = 'C:/Users/hmtkv/Desktop/THESSIS'
+    #runOutputFileName = "PREDD.csv"
+    #seq_len = 800
+    #model_file_name = 'words_conv_lstm_model_w1_v111112.h5'
+    global sem_eval_path
+    sem_eval_path = args.code_path
+    global runOutputFileName
+    runOutputFileName = args.runOutputFileName
+    global seq_len
+    seq_len = args.seq_len
+    global model_file_name
+    model_file_name = args.model_file_name
+    print(sem_eval_path)
+    
 
-PredictBias(sem_eval_path, runOutputFileName, model_file_name).main('from_file')
+    sys.exit()
+    PredictBias(sem_eval_path, runOutputFileName, model_file_name).main('from_file')
 
-
+if __name__ == '__main__':
+    print('Running!')
+    main()
 
 
 

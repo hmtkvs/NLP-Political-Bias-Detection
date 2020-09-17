@@ -2,17 +2,7 @@
   "db": {
     "host": "localhost",
     "user": "root",
-    "pass": "Asdasd94-35",
-    "database": "thessis"
-  },
-  "instagram": {
-    "user": "martykindle@hotmail.com",
-    "pass": "FRTNA123456-"
-  },
-  "config": {
-    "days_to_unfollow": 1,
-    "likes_over": 150,
-    "check_followers_every": 3600,
-    "hashtags": ["#lamp", "#lighting"]
+    "pass": "*your_password*",
+    "database": "*database_name*"
   }
 }
