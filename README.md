@@ -28,11 +28,11 @@ Sections below demonstrates the requirements and steps to run the codes for each
 ### Installation
 1. Clone this repository
 2. Install dependencies
-> pip install -r requirements.txt
+  > pip install -r requirements.txt
 3. Connect to MySQL
   - Enter your user *name*, *password* and *database_name* into [MySQLsettings.json](https://github.com/hmtkvs/MastersThesis/blob/master/MySQLsettings.json)
   - Follow the steps in (https://dev.mysql.com/doc/connector-python/en/connector-python-installation.html) to download MySQL connector 
-  > pip install mysql-connector-python
+    > pip install mysql-connector-python
   - Open your MySQL Console
     > mysql> CREATE DATABASE database_name;
     > mysql> use database_name;
@@ -43,9 +43,7 @@ Sections below demonstrates the requirements and steps to run the codes for each
        text_comment VARCHAR(350), time_comment VARCHAR(100), id_comment VARCHAR(100), id_tweet VARCHAR(100), predicted_bias VARCHAR(10), PRIMARY KEY (id_user))
     * database should look like this when you have followed the steps above.
     ![image](https://user-images.githubusercontent.com/56079783/93386616-410ed600-f868-11ea-9d2e-c0e36d2df4db.png)
-       
-    
-  
+         
 ### Training
 - `cd Train`
 - Download BERT embeddings from:
@@ -64,12 +62,30 @@ Sections below demonstrates the requirements and steps to run the codes for each
 * To evaluate the model, use -e option. This will run the script on evaluation mode, which loads the trained model from disk and runs it against the validation data to get  the model's evaluation metrics. The metrics will be printed in a log file.
 
 ### Get Tweets
-This function will retrieve tweets and insert them into Tweets table in MySQL.
+This function retrieves tweets and insert them into Tweets table in MySQL.
 - `cd MastersThesis`
-- Select arguments for 
+- Select arguments for:
   i. `--username` without using @
-  ii. `--since` and `-until`. Example date: `2020-09-01`
+  ii. `--since` and `-until`. Example date format: `2020-09-01`
 > python Exporter.py --username *username* --since *starting_date* --until *finishing_date* 
+
+### Get Comments
+Checks database for new tweets, finds replies to them and than inserts into MySQL.
+> python getComments.py 
+
+### Scrape Full Article
+Checks news tweets whose author name has not been entered, uses link from database to scrape full article and the author.
+* To run Google Chrome or Chromium should be installed.
+  > python fullArticle.py
+  
+### Predict Bias
+Checks database for comments or tweets whose bias have not been assigned. If there is any, this code makes predictions and inserts into database.
+- Select arguments for:
+  i. `-p` the path that you are running the code
+  ii. `-o` the directory that you want to put output
+  iii. `-s` preferred sequence length
+  iv. `-m` name of the model that will make the predictions
+    > python dynamic_bias.py
 
 
 
