@@ -83,3 +83,9 @@ Checks database for comments or tweets whose bias have not been assigned. If the
   -Run the code
     > python dynamic_bias.py -p *yourpath/MastersThesis/* -o yourpath/MastersThesis/results* -m "words_conv_lstm_model_w1_v1"
 
+## Author
+[Hamit Kavas](hamit.kavas01@estudiant.upf.edu)
+
+
+
+
