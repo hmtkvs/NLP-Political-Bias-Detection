@@ -55,8 +55,8 @@ Sections below demonstrates the requirements and steps to run the codes for each
 - Run the code
   > python train_words_dl_model.py -a 1 -w 1 -p *yourpath/MastersThesis/Train*
   - Use `-a` argument to train a different model:
-    i. `-a 1` hybrid CNN-LSTM model or
-    ii. `-a 2` LSTM model.
+    * `-a 1` hybrid CNN-LSTM model or
+    * `-a 2` LSTM model.
   - Use `-w` argument for embeddings
 
 * To evaluate the model, use -e option. This will run the script on evaluation mode, which loads the trained model from disk and runs it against the validation data to get  the model's evaluation metrics. The metrics will be printed in a log file.
@@ -65,8 +65,8 @@ Sections below demonstrates the requirements and steps to run the codes for each
 This function retrieves tweets and insert them into Tweets table in MySQL.
 - `cd MastersThesis`
 - Select arguments for:
-  i. `--username` without using @
-  ii. `--since` and `-until`. Example date format: `2020-09-01`
+  * `--username` without using @
+  * `--since` and `-until`. Example date format: `2020-09-01`
 > python Exporter.py --username *username* --since *starting_date* --until *finishing_date* 
 
 ### Get Comments
@@ -81,10 +81,10 @@ Checks news tweets whose author name has not been entered, uses link from databa
 ### Predict Bias
 Checks database for comments or tweets whose bias have not been assigned. If there is any, this code makes predictions and inserts into database.
 - Select arguments for:
-  i. `-p` the path that you are running the code
-  ii. `-o` the directory that you want to put output
-  iii. `-s` preferred sequence length
-  iv. `-m` name of the model that will make the predictions
+  * `-p` the path that you are running the code
+  * `-o` the directory that you want to put output
+  * `-s` preferred sequence length
+  * `-m` name of the model that will make the predictions
     > python dynamic_bias.py
 
 
