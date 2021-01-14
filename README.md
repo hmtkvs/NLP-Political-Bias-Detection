@@ -81,7 +81,7 @@ Checks database for comments or tweets whose bias have not been assigned. If the
   * `-s` preferred sequence length
   * `-m` name of the model that will make the predictions
   -Run the code
-    > python dynamic_bias.py -p *yourpath/MastersThesis/* -o yourpath/MastersThesis/results* -m "words_conv_lstm_model_w1_v1"
+    > python dynamic_bias.py -p *yourpath/MastersThesis/* -o <your_path>/MastersThesis/results* -m "words_conv_lstm_model_w1_v1"
 
 ## Author
 [Hamit Kavas](mailto:hamit.kavas01@estudiant.upf.edu)
