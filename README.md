@@ -14,7 +14,7 @@ Sections below demonstrates the requirements and steps to run the codes for each
   - Follow the steps in (https://dev.mysql.com/doc/connector-python/en/connector-python-installation.html) to download MySQL connector 
     > pip install mysql-connector-python
   - Open your MySQL Console
-    > mysql> CREATE DATABASE database_name;
+    `> mysql> CREATE DATABASE database_name;`
     > mysql> use database_name;
     > mysql> CREATE TABLE tweets (id_tweet VARCHAR(45) NOT NULL, text_tweet longtext,
        time_tweet VARCHAR(45) NOT NULL, link_tweet VARCHAR(100), news_link VARCHAR(100), predicted_bias VARCHAR(10), author_name VARCHAR(200), PRIMARY KEY (id_tweet))
